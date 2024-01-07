@@ -1,0 +1,30 @@
+body{
+    padding: 0;
+    margin: 0;
+   
+    
+}
+
+.rock-btn{
+    background-color: rgb(202, 29, 29);
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 1.2rem;
+
+}
+
+.paper-btn{
+    background-color: rgb(219, 219, 32);
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 1.2rem;
+
+}
+
+.scissor-btn{
+    background-color: rgb(33, 222, 33);
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 1.2rem;
+
+}
