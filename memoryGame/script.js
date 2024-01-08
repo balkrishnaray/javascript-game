@@ -15,8 +15,9 @@ const cardArray = [
   { name: "strawberry", img: "img/strawberry.jpg" },
 ];
 
-const cardChosen = [];
-const cardChosenIds = [];
+let cardChosen = [];
+let cardChosenIds = [];
+const cardsWon = [];
 cardArray.sort(() => 0.5 - Math.random());
 
 const gridDisplay = document.getElementById("grid");
@@ -35,7 +36,9 @@ createBoard();
 function flipcard() {
   const cardId = this.getAttribute("data-id");
   cardChosen.push(cardArray[cardId].name);
+  cardChosenIds.push(cardId);
   console.log(cardChosen);
+  console.log(cardId);
   this.setAttribute("src", cardArray[cardId].img);
   if (cardChosen.length === 2) {
     setTimeout(checkMatch, 500);
@@ -43,7 +46,25 @@ function flipcard() {
 }
 
 function checkMatch() {
-  if (cardChosen[0] === cardChosen[1]) {
-    console.log("its a match");
+  const cards = document.querySelectorAll("img");
+  const optionOne = cardChosenIds[0];
+  const optionTwo = cardChosenIds[1];
+  if (optionOne == optionTwo) {
+    alert("you have clicked the same image");
   }
+
+  if (cardChosen[0] === cardChosen[1]) {
+    alert("It's a match!");
+    cards[optionOne].setAttribute("src", "img/white.png");
+    cards[optionTwo].setAttribute("src", "img/white.png");
+    cards[optionOne].removeEventListener("click", flipcard);
+    cards[optionTwo].removeEventListener("click", flipcard);
+    cardsWon.push(cardChosen);
+  } else {
+    cards[optionOne].setAttribute("src", "img/plain.jpg");
+    cards[optionTwo].setAttribute("src", "img/plain.jpg");
+    alert("sorry try again!");
+  }
+  cardChosen = [];
+  cardChosenIds = [];
 }
