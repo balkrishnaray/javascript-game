@@ -15,6 +15,8 @@ const cardArray = [
   { name: "strawberry", img: "img/strawberry.jpg" },
 ];
 
+const cardChosen = [];
+const cardChosenIds = [];
 cardArray.sort(() => 0.5 - Math.random());
 
 const gridDisplay = document.getElementById("grid");
@@ -32,5 +34,16 @@ createBoard();
 
 function flipcard() {
   const cardId = this.getAttribute("data-id");
-  console.log("clicked", cardId);
+  cardChosen.push(cardArray[cardId].name);
+  console.log(cardChosen);
+  this.setAttribute("src", cardArray[cardId].img);
+  if (cardChosen.length === 2) {
+    setTimeout(checkMatch, 500);
+  }
+}
+
+function checkMatch() {
+  if (cardChosen[0] === cardChosen[1]) {
+    console.log("its a match");
+  }
 }
