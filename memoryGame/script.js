@@ -14,7 +14,7 @@ const cardArray = [
   { name: "pineapple", img: "img/pineapple.jpg" },
   { name: "strawberry", img: "img/strawberry.jpg" },
 ];
-
+let resultDisplay = document.querySelector("#result");
 let cardChosen = [];
 let cardChosenIds = [];
 const cardsWon = [];
@@ -50,10 +50,12 @@ function checkMatch() {
   const optionOne = cardChosenIds[0];
   const optionTwo = cardChosenIds[1];
   if (optionOne == optionTwo) {
+    cards[optionOne].setAttribute("src", "img/plain.jpg");
+    cards[optionTwo].setAttribute("src", "img/plain.jpg");
     alert("you have clicked the same image");
   }
 
-  if (cardChosen[0] === cardChosen[1]) {
+  if (cardChosen[0] == cardChosen[1]) {
     alert("It's a match!");
     cards[optionOne].setAttribute("src", "img/white.png");
     cards[optionTwo].setAttribute("src", "img/white.png");
@@ -63,8 +65,12 @@ function checkMatch() {
   } else {
     cards[optionOne].setAttribute("src", "img/plain.jpg");
     cards[optionTwo].setAttribute("src", "img/plain.jpg");
-    alert("sorry try again!");
   }
+  resultDisplay.textContent = cardsWon.length;
   cardChosen = [];
   cardChosenIds = [];
+
+  if (cardsWon.length == cardArray.length / 2) {
+    resultDisplay.textContent = "congratulations you have found them all!";
+  }
 }
