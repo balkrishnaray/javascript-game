@@ -51,8 +51,10 @@ function checkMatch() {
   const optionTwo = cardChosenIds[1];
   if (optionOne == optionTwo) {
     cards[optionOne].setAttribute("src", "img/plain.jpg");
-    cards[optionTwo].setAttribute("src", "img/plain.jpg");
     alert("you have clicked the same image");
+    cardChosen = [];
+    cardChosenIds = [];
+    return;
   }
 
   if (cardChosen[0] == cardChosen[1]) {
