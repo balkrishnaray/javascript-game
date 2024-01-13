@@ -1,18 +1,28 @@
 .grid{
-    width: 606px;
-    height: 606px;
+    width: 456px;
+    height: 456px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .square{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border: 1px solid black;
 }
 
 .mole{
 
-background-color: blue;
+background-color:red;
 
 }
+
+#start-btn{
+    padding: 5px 15px;
+    margin: 5px 0px;
+    border-radius: 8px;
+    background: rgb(31, 136, 31);
+    color: white;
+}
+
+
