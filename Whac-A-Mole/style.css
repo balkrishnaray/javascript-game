@@ -25,4 +25,10 @@ background-color:red;
     color: white;
 }
 
+.mole{
+   background: url(mole.jpg);
+   background-size: cover;
+ 
+}
+
 
