@@ -1,0 +1,28 @@
+.grid{
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: auto ;
+    
+    
+}
+
+
+.grid div{
+    width: 30px;
+    height: 30px;
+    
+
+
+}
+
+.invaders{
+    background-color: purple;
+    border-radius: 10px;
+}
+
+.shooter{
+    background-color: red;
+}
