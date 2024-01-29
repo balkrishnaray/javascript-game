@@ -107,13 +107,13 @@ function checkMatch() {
       square3.classList.contains("player-one") &&
       square4.classList.contains("player-one")
     )
-      resultDisplay.innerHTML = "Player one wins!";
+      resultDisplay.innerHTML = "Player one with red wins!";
     if (
       square1.classList.contains("player-two") &&
       square2.classList.contains("player-two") &&
       square3.classList.contains("player-two") &&
       square4.classList.contains("player-two")
     )
-      resultDisplay.innerHTML = "Player two wins!";
+      resultDisplay.innerHTML = "Player two with blue wins!";
   }
 }
